@@ -1,0 +1,27 @@
+/*
+ * Description: CMPE-273
+ * Purpose: To demonstrate Scala and Gradle using Scala IDE build of Eclipse SDK 
+ * Author: Sumit Gerela
+ * SJSU ID: 010021596
+ */
+
+import org.springframework.boot._
+import org.springframework.boot.autoconfigure._
+import org.springframework.stereotype._
+import org.springframework.web.bind.annotation._
+
+object SampleController {
+
+  def main(args: Array[String]) {
+    SpringApplication.run(classOf[SampleController])
+  }
+}
+
+@Controller
+@EnableAutoConfiguration
+class SampleController {
+
+  @RequestMapping(Array("/"))
+  @ResponseBody
+  def home(): String = "Hello World!"
+}
